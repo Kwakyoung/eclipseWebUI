@@ -1,162 +1,195 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title> 수코딩 클론 </title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<title>수코딩 클론</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/layout.css" />
+
 </head>
 <body>
-
- <!-- Emmet Syntax 실습 - https://docs.emmet.io/abbreviations/syntax/ -->
-		<h1>Emmet</h1>
-		<p>코드를 고속으로 편집하거나 코딩하는데 필요한 플러그인으로 css와 문법이 유사합니다.</p>
-		
-		<h2>Emmet 사용법</h2>
-		<h3>Elements(=요소)</h3>
-		<p>Emmet에서 HTML 마크업 요소를 작성할때는, 요소명을 적고 Tab(=확장)을 누르면 자동으로 HTML요소로 만들어줍니다.</p>
-		
-		<h3>Nestin Operator(=중첩 연산자)</h3>
-		<ul>
-			<li>Child : > (자식, 자손 요소 => 포함관계로 작성)</li>
-			<li>Sibling : + (형제 => 중첩된 요소와 나란히 작성)</li>
-			<li>Climb-Up : ^ (캐럿 => 중첩을 벗어나는 것)</li>
-			<li>Multiplication : * (복제 => 여러 요소를 작성) </li>
-			<li>Grouping : () (그룹화)</li>
-		</ul>
-		
-		<h4>Child 선택자</h4> 
-		<!-- div>ul>li -->
-		<div>
-			<ul>
-				<li>Child</li>
-			</ul>
+	<div class="call_chatbot">
+		<img src="https://picsum.photos/50" alt="챗봇" />
+	</div>
+	<div class="d-none" id="chatbot">
+		<img src="https://picsum.photos/50" alt="챗봇" />
+	</div>
+	<header>
+	<div class="header_wrap">	<div class="logo">
+				<a href="#"><img src="images/su_logo.png" width="50" height="50" alt="수코딩" /></a>
+			</div>
+			<!-- /.logo -->
+			<nav class="main_nav">
+				<ul id="gnb">
+					<li><a href="#">소개</a></li>
+					<li><a href="#">커리큘럼</a></li>
+					<li><a href="#">커뮤니티</a></li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+				<!-- /#gnb -->
+			</nav>
+			<!-- /.main_nav -->
+			<div class="login">
+				<a href="#">로그인</a>
+			</div>
+			<!-- /.login --></div>
+		<!-- /.header_wrap -->
+	</header>
+	
+	<div class="carousel">
+		<div class="prev">
+			<span class="material-symbols-outlined">
+chevron_left
+</span>
 		</div>
-		
-		
-		<h4>Sibling 연산자</h4> 
-		<!-- div+ul+li -->
-		<xmp>
-		<div></div>
-		<ul></ul>
-		<li></li>
-		</xmp>
-		
-		<h4>Climb-Up 연산자</h4>
-		<!-- header>p.logo+div.nav>ul>li>a^^^a.login -->
-		<header>
-			<p class="logo"></p>
-			<div class="nav">
+		<!-- /.prev -->
+		<div class="contents">
+			<div class="conn_left"></div>
+			<!-- /.conn_left -->
+			<div class="conn_right">
+				<img src="https://picsum.photos/300" alt="dummy image">
+				
+			</div>
+			<!-- /.conn_right -->
+			<div class="pager">
 				<ul>
-					<li><a href="">1</a></li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
 				</ul>
 			</div>
-			<a href="" class="login">login</a>
-		</header>
-		
-		
-		<h4>Multiplication 연산자</h4>
-		<!-- ul>li*5>a -->
-		<ul>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-		</ul>
-		
-		<!-- ul>li*3>a{$} -->
-		<ul>
-			<li><a href="">1</a></li>
-			<li><a href="">2</a></li>
-			<li><a href="">3</a></li>
-		</ul>
-		
-		
-		<h4>Grouping 연산자</h4>
-		<!-- div>(header>ul>li*2>a)+footer>p -->
-		<xmp>
-			<div>
-				<header>
-					<ul>
-						<li><a href="">1</a></li>
-						<li><a href="">2</a></li>
-					</ul>
-				</header>
-				<footer>
-					<p></p>
-				</footer>
-			</div>
-		</xmp>
-		
-		
-		<h3>Attribute Operator(=소성 연산자)</h3>
-		<ul>
-			<li>ID, CLASS : .name or #name</li>
-			<li>Custom attribute : [attr]</li>
-		</ul>
-		
-		<h4>ID, CLASS attribute : .name or #name</h4>
-		<!-- div#header+div.page+div#footer.class1.class2.class3 -->
-		<xmp>
-			<div id="header"></div>
-			<div class="page"></div>
-			<div id="footer" class="class1 class2 class3"></div>
-		</xmp>
-		
-		
-		<h4>Custom attributes</h4>
-		<!-- td[title="Hello world!" colspan=3] -->
-		<td title="Hello world!" colspan="3"></td>
-		
-		
-		
-		<h4>item numbering</h4>
-		<!-- ul>li.item$*5 -->
-		<xmp>
-			<ul>
-				<li class="item1"></li>
-				<li class="item2"></li>
-				<li class="item3"></li>
-				<li class="item4"></li>
-				<li class="item5"></li>
-			</ul>
-		</xmp>
-		
-		
-		<h4>pad numbering</h4>
-		<!-- ul>li.item$$$*5 -->
-		<ul>
-			<li class="item001"></li>
-			<li class="item002"></li>
-			<li class="item003"></li>
-			<li class="item004"></li>
-			<li class="item005"></li>
-		</ul>
-		
-		
-		<h3>Text(=내용, 컨텐츠)</h3>
-		<!-- {click me} -->
-		<div class="nav">
-			<ul class="gnb">
-				<li><a href="">click me</a></li>
-				<li><a href="">click me</a></li>
-				<li><a href="">click me</a></li>
-			</ul>
+			<!-- /.pager -->
 		</div>
+		<!-- /.contents -->
+		<div class="next">
+			<span class="material-symbols-outlined">
+chevron_right
+</span>
+		</div>
+		<!-- /.next -->
+	</div>
+	<!-- /.carousel -->
+	<section>
+		<article>
+			<div class="article_title"></div>
+			<!-- /.article_title -->
+			<ul class="article_lists">
+				<li>
+					<img src="" alt="" class="li_img" />
+					<h2 class="li_title"></h2>
+					<!-- /.li_title -->
+					<p class="li_text"></p>
+					<!-- /.li_text -->
+					<hr />
+					<div>
+						<div class="fee"></div>
+						<!-- /.fee -->
+						<div class="audience"></div>
+						<!-- /.audience -->
+					</div>
+				</li>
+				<li>
+					<img src="" alt="" class="li_img" />
+					<h2 class="li_title"></h2>
+					<!-- /.li_title -->
+					<p class="li_text"></p>
+					<!-- /.li_text -->
+					<hr />
+					<div>
+						<div class="fee"></div>
+						<!-- /.fee -->
+						<div class="audience"></div>
+						<!-- /.audience -->
+					</div>
+				</li>
+				<li>
+					<img src="" alt="" class="li_img" />
+					<h2 class="li_title"></h2>
+					<!-- /.li_title -->
+					<p class="li_text"></p>
+					<!-- /.li_text -->
+					<hr />
+					<div>
+						<div class="fee"></div>
+						<!-- /.fee -->
+						<div class="audience"></div>
+						<!-- /.audience -->
+					</div>
+				</li>
+			</ul>
+			<!-- /.article_lists -->
+		</article>
+		<article>
+			<div class="article_title"></div>
+			<!-- /.article_title -->
+			<ul class="article_lists">
+				<li>
+					<img src="" alt="" class="li_img" />
+					<h2 class="li_title"></h2>
+					<!-- /.li_title -->
+					<p class="li_text"></p>
+					<!-- /.li_text -->
+					<hr />
+					<div>
+						<div class="fee"></div>
+						<!-- /.fee -->
+						<div class="audience"></div>
+						<!-- /.audience -->
+					</div>
+				</li>
+				<li>
+					<img src="" alt="" class="li_img" />
+					<h2 class="li_title"></h2>
+					<!-- /.li_title -->
+					<p class="li_text"></p>
+					<!-- /.li_text -->
+					<hr />
+					<div>
+						<div class="fee"></div>
+						<!-- /.fee -->
+						<div class="audience"></div>
+						<!-- /.audience -->
+					</div>
+				</li>
+				<li>
+					<img src="" alt="" class="li_img" />
+					<h2 class="li_title"></h2>
+					<!-- /.li_title -->
+					<p class="li_text"></p>
+					<!-- /.li_text -->
+					<hr />
+					<div>
+						<div class="fee"></div>
+						<!-- /.fee -->
+						<div class="audience"></div>
+						<!-- /.audience -->
+					</div>
+				</li>
+			</ul>
+			<!-- /.article_lists -->
+		</article>
+	</section>
+	<footer>
+		<div class="site_title">
+			<img src="https://picsum.photos/30" alt="수코딩" />
+			<div class="site_brand">수코딩</div>
+			<!-- /.site_brand -->
+		</div>
+		<!-- /.site_title -->
+		<div class="site_vision">수코딩은 어쩌고 저쩌고 합니다.</div>
+		<!-- /.site_vision -->
+		<div class="site_link">youtbe 바로가기</div>
+		<!-- /.site_link -->
+		<div class="site_info">수코딩은 어떻습니다</div>
+		<!-- /.site_info -->
+	</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
